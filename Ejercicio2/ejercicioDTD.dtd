@@ -1,0 +1,21 @@
+<!ELEMENT universidad (nombre,ciudad, departamento*)>
+<!ELEMENT nombre (#PCDATA)>
+<!ELEMENT ciudad (#PCDATA)>
+<!ELEMENT departamento (empleado*)>
+<!ATTLIST departamento descripcion CDATA #IMPLIED>
+<!ELEMENT empleado (nombre, sueldomes?, sueldoanio? , becario?, categoria, descripcion)>
+<!ATTLIST empleado nif ID #REQUIRED>
+<!ATTLIST empleado jefe IDREFS #IMPLIED>
+<!ELEMENT nombre (#PCDATA)>
+
+<!-- NO ENTIEDNO BIEN COMO HACER ESTOS TRES ELEMENTOS-->
+<!ELEMENT sueldomes (#PCDATA)>
+<!ELEMENT sueldoanio (#PCDATA)>
+<!ATTLIST sueldoanio moneda CDATA #IMPLIED>
+<!ELEMENT becario EMPTY>
+<!-- NO ENTIEDNO BIEN COMO HACER ESTOS TRES -->
+
+
+<!ELEMENT categoria (#PCDATA)>
+<!ELEMENT descripcion (#PCDATA | strong)*>
+<!ELEMENT b (#PCDATA)>

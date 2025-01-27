@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?> <!-- faltaba version="1.0"-->
+<carreteras> <!-- añadido la etiqueta raiz-->
+    <pais>España</pais>
+    <entidad>Ministerio de transporte</entidad>
+ <!-- una etiqueta no puede empezar por numero: he movido el 1 al final de carretera-->
+    <carretera1 cod="1"> <!-- faltaban las comillas en cod-->
+        <tipo_carretera>Autopista</tipo_carretera>
+        <longitud unidad="km">200</longitud>
+        <ruta>
+            <origen>Ciudad X</origen>
+            <destino>Ciudad Y</destino>
+        </ruta>
+        <terminada></terminada><!-- cambiada la barra de cierre (estaba del reves)-->
+    </carretera1>
+    <!-- una etiqueta no puede empezar por numero: he movido el 2 al final de carretera-->
+    <carretera2 cod="2"><!-- faltaban las comillas en cod-->
+        <tipo_carretera>Carretera Nacional</tipo_carretera>
+        <longitud unidad="km">100</longitud>
+        <ruta>
+            <origen>Ciudad A</origen>
+            <destino>Ciudad B</destino>
+        </ruta>
+    </carretera2>
+
+</carreteras><!-- añadido la etiqueta raiz-->

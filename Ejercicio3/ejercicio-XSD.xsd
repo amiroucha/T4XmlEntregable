@@ -1,0 +1,44 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="universidad">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="nombre"></xs:element>
+                <xs:element name="ciudad"></xs:element>
+                <xs:element name="departamento" type="tipoDept"></xs:element>
+            </xs:sequence>
+        </xs:complexType>
+
+
+
+    </xs:element>
+    <!-- tipo de departamento-->
+
+    <xs:complexType name="tipoDept">
+        <xs:sequence>
+            <xs:element name="empleado" type="tipoEmple">
+            
+            </xs:element>
+        
+        </xs:sequence>
+        <xs:attribute name="descripcion" use="optional"></xs:attribute>
+    </xs:complexType>
+    <!-- tipo de empleado-->
+    <xs:complexType name="tipoEmple">
+        <xs:sequence>
+            <xs:element name="nombre">
+                <xs:complexType>
+                <xs:attribute name="nif" use="required"></xs:attribute>
+                <xs:attribute name="jefe" use="optional"></xs:attribute>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="sueldomes"></xs:element>
+            <xs:element name="sueldoanio"></xs:element>
+            <xs:element name="becario"></xs:element>
+            <xs:element name="categoria"></xs:element>
+            <xs:element name="descripcion"></xs:element>
+        </xs:sequence>
+
+    </xs:complexType>
+    <!-- estructura del nif-->
+
+</xs:schema>
