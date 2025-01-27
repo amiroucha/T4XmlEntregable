@@ -42,5 +42,5 @@ xsi:noNamespaceSchemaLocation="ejercicio-xsd.xsd">
             <becario/>
              <descripcion>Una descripción del <b>empleado</b>, con las <b>tareas más importantes</b> que realiza en el departamento.</descripcion>
         </empleado>
-    </departamento>
+    </departamento> 
 </universidad>
