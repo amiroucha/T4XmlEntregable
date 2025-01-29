@@ -2,8 +2,8 @@
     <xs:element name="universidad">
         <xs:complexType>
             <xs:sequence>
-                <xs:element name="nombre"></xs:element>
-                <xs:element name="ciudad"></xs:element>
+                <xs:element name="nombre" type="xs:string"></xs:element>
+                <xs:element name="ciudad" type="xs:string"></xs:element>
                 <xs:element name="departamento" type="tipoDept"></xs:element>
             </xs:sequence>
         </xs:complexType>
@@ -20,15 +20,22 @@
             </xs:element>
         
         </xs:sequence>
-        <xs:attribute name="descripcion" use="optional"></xs:attribute>
+        <xs:attribute name="descripcion" use="optional">
+            <xs:simpleType>
+                <xs:restriction base="xs:string">
+                    <xs:minInclusive value="0"></xs:minInclusive>
+                </xs:restriction>
+            
+            </xs:simpleType>
+        </xs:attribute>
     </xs:complexType>
     <!-- tipo de empleado-->
     <xs:complexType name="tipoEmple">
         <xs:sequence>
             <xs:element name="nombre">
                 <xs:complexType>
-                <xs:attribute name="nif" use="required"></xs:attribute>
-                <xs:attribute name="jefe" use="optional"></xs:attribute>
+                    <xs:attribute name="nif" use="required" type="nifType"></xs:attribute>
+                    <xs:attribute name="jefe" use="optional"></xs:attribute>
                 </xs:complexType>
             </xs:element>
             <xs:element name="sueldomes"></xs:element>
@@ -40,5 +47,11 @@
 
     </xs:complexType>
     <!-- estructura del nif-->
+    <xs:simpleType name="nifType">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[A-Z]{1}[0-9]{8}"></xs:pattern>
+        </xs:restriction>
 
-</xs:schema>
+    </xs:simpleType>
+
+</xs:schema>    
