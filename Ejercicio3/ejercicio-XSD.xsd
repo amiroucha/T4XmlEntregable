@@ -2,48 +2,46 @@
     <xs:element name="universidad">
         <xs:complexType>
             <xs:sequence>
-                <xs:element name="nombre" type="xs:string"></xs:element>
-                <xs:element name="ciudad" type="xs:string"></xs:element>
-                <xs:element name="departamento" type="tipoDept"></xs:element>
+                <xs:element name="nombre" type="longitud50"></xs:element>
+                <xs:element name="ciudad" type="longitud50"></xs:element>
+                <xs:element name="departamento" type="tipoDept" minOccurs="0" maxOccurs="unbounded"></xs:element>
             </xs:sequence>
         </xs:complexType>
-
-
-
     </xs:element>
     <!-- tipo de departamento-->
-
     <xs:complexType name="tipoDept">
-        <xs:sequence>
-            <xs:element name="empleado" type="tipoEmple">
-            
-            </xs:element>
-        
+        <xs:sequence> <!-- como maximo tendra 5 empeleados pero puede no tener ninguno-->
+        <xs:element name="empleado" type="tipoEmple" minOccurs="0" maxOccurs="5"/>
         </xs:sequence>
-        <xs:attribute name="descripcion" use="optional">
-            <xs:simpleType>
-                <xs:restriction base="xs:string">
-                    <xs:minInclusive value="0"></xs:minInclusive>
-                </xs:restriction>
-            
-            </xs:simpleType>
-        </xs:attribute>
+        <xs:attribute name="descripcion" type="longitud50" use="optional"/>
     </xs:complexType>
+
     <!-- tipo de empleado-->
     <xs:complexType name="tipoEmple">
         <xs:sequence>
-            <xs:element name="nombre">
-                <xs:complexType>
-                    <xs:attribute name="nif" use="required" type="nifType"></xs:attribute>
-                    <xs:attribute name="jefe" use="optional"></xs:attribute>
+            <xs:element name="nombre" type="longitud50"></xs:element>
+            <xs:choice>
+                <xs:element name="sueldomes" type="sueldosType"></xs:element>
+                <xs:element name="sueldoanio" type="sueldosType"></xs:element>
+            </xs:choice>  
+            <xs:element name="categoria">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:enumeration value="Profesor"/>
+                        <xs:enumeration value="Catedrático"/>
+                        <xs:enumeration value="Becario"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+
+            <xs:element name="becario" minOccurs="0"></xs:element>
+            <xs:element name="descripcion" type="xs:string">
+                
                 </xs:complexType>
             </xs:element>
-            <xs:element name="sueldomes"></xs:element>
-            <xs:element name="sueldoanio"></xs:element>
-            <xs:element name="becario"></xs:element>
-            <xs:element name="categoria"></xs:element>
-            <xs:element name="descripcion"></xs:element>
         </xs:sequence>
+        <xs:attribute name="nif" type="nifType"></xs:attribute>
+        <xs:attribute name="jefe" use="optional" type="nifType"></xs:attribute>
 
     </xs:complexType>
     <!-- estructura del nif-->
@@ -51,7 +49,28 @@
         <xs:restriction base="xs:string">
             <xs:pattern value="[A-Z]{1}[0-9]{8}"></xs:pattern>
         </xs:restriction>
-
     </xs:simpleType>
+
+    <xs:simpleType name="nifTypeJefes"> <!-- TENGO QUE AÑADIR UN ESPACIO AUI Y REOETIR EL NIF !!!!!!!!!!!!!-------------------------------->
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[A-Z]{1}[0-9]{8}"></xs:pattern>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <!-- Palabras max de 50-->
+    <xs:simpleType name="longitud50">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="50"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <!-- Tipos sueldos, cintenido simple + extension  sin elementos , pero con atributos-->
+    <xs:complexType name="sueldosType">
+        <xs:simpleContent>
+            <xs:extension base="xs:decimal">  
+                <xs:attribute name="moneda" type="xs:string" default="Euro"/>
+            </xs:extension>  
+        </xs:simpleContent>
+    </xs:complexType>
 
 </xs:schema>    
