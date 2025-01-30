@@ -2,6 +2,7 @@
 <!ELEMENT nombre (#PCDATA)>
 <!ELEMENT ciudad (#PCDATA)>
 <!ELEMENT departamento (empleado*)>
+
 <!ATTLIST departamento descripcion CDATA #IMPLIED>
 <!ELEMENT empleado (nombre, (sueldomes | sueldoanio)? , categoria, becario? , descripcion)>
 <!ATTLIST empleado nif ID #REQUIRED>
@@ -11,7 +12,9 @@
 <!ATTLIST sueldomes moneda CDATA "Euro">
 <!ELEMENT sueldoanio (#PCDATA)>
 <!ATTLIST sueldoanio moneda CDATA "Euro">
+
 <!ELEMENT categoria (#PCDATA)>
 <!ELEMENT becario EMPTY>
+
 <!ELEMENT descripcion (#PCDATA | b)*>
 <!ELEMENT b (#PCDATA)>
