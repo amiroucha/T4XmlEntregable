@@ -3,7 +3,7 @@
         <xs:complexType>
             <xs:sequence>
                 <xs:element name="nombre" type="longitud50"></xs:element>
-                <xs:element name="ciudad" type="longitud50"></xs:element>
+                <xs:element name="ciudad" type="xs:string"></xs:element>
                 <xs:element name="departamento" type="tipoDept" minOccurs="0" maxOccurs="unbounded"></xs:element>
             </xs:sequence>
         </xs:complexType>
@@ -33,7 +33,6 @@
                     </xs:restriction>
                 </xs:simpleType>
             </xs:element>
-
             <xs:element name="becario" minOccurs="0"></xs:element>
             <xs:element name="descripcion">
                <xs:complexType mixed="true">
