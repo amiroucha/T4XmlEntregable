@@ -3,12 +3,12 @@
 <!ELEMENT ciudad (#PCDATA)>
 <!ELEMENT departamento (empleado*)>
 <!ATTLIST departamento descripcion CDATA #IMPLIED>
-<!ELEMENT empleado (nombre, (sueldomes | sueldoanio)? , categoria,becario? , descripcion)>
+<!ELEMENT empleado (nombre, (sueldomes | sueldoanio)? , categoria, becario? , descripcion)>
 <!ATTLIST empleado nif ID #REQUIRED>
 <!ATTLIST empleado jefe IDREFS #IMPLIED>
 
 <!ELEMENT sueldomes (#PCDATA)>
-<!ATTLIST sueldomes moneda CDATA #IMPLIED>
+<!ATTLIST sueldomes moneda CDATA "Euro">
 <!ELEMENT sueldoanio (#PCDATA)>
 <!ATTLIST sueldoanio moneda CDATA "Euro">
 <!ELEMENT categoria (#PCDATA)>
