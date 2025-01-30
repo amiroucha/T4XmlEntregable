@@ -11,7 +11,7 @@
     <!-- tipo de departamento-->
     <xs:complexType name="tipoDept">
         <xs:sequence> <!-- como maximo tendra 5 empeleados pero puede no tener ninguno-->
-        <xs:element name="empleado" type="tipoEmple" minOccurs="0" maxOccurs="5"/>
+            <xs:element name="empleado" type="tipoEmple" minOccurs="0" maxOccurs="5"/>
         </xs:sequence>
         <xs:attribute name="descripcion" type="longitud50" use="optional"/>
     </xs:complexType>
@@ -21,8 +21,8 @@
         <xs:sequence>
             <xs:element name="nombre" type="longitud50"></xs:element>
             <xs:choice>
-                <xs:element name="sueldomes" type="sueldosType"></xs:element>
-                <xs:element name="sueldoanio" type="sueldosType"></xs:element>
+                <xs:element name="sueldomes" type="sueldosType" minOccurs="0"></xs:element>
+                <xs:element name="sueldoanio" type="sueldosType" minOccurs="0"></xs:element>
             </xs:choice>  
             <xs:element name="categoria">
                 <xs:simpleType>
@@ -35,27 +35,27 @@
             </xs:element>
 
             <xs:element name="becario" minOccurs="0"></xs:element>
-            <xs:element name="descripcion" type="xs:string">
-                
-                </xs:complexType>
+            <xs:element name="descripcion">
+               <xs:complexType mixed="true">
+                <xs:sequence>
+                        <xs:element name="b" type="xs:string" maxOccurs="unbounded"/>
+                </xs:sequence>
+               </xs:complexType>
             </xs:element>
         </xs:sequence>
-        <xs:attribute name="nif" type="nifType"></xs:attribute>
-        <xs:attribute name="jefe" use="optional" type="nifType"></xs:attribute>
+        <xs:attribute name="nif" type="nifType"/>
+        <xs:attribute name="jefe" use="optional" type="xs:string"/>
 
     </xs:complexType>
+
     <!-- estructura del nif-->
     <xs:simpleType name="nifType">
         <xs:restriction base="xs:string">
-            <xs:pattern value="[A-Z]{1}[0-9]{8}"></xs:pattern>
+            <xs:pattern value="[A-Z][0-9]{8}"/>
         </xs:restriction>
     </xs:simpleType>
 
-    <xs:simpleType name="nifTypeJefes"> <!-- TENGO QUE AÑADIR UN ESPACIO AUI Y REOETIR EL NIF !!!!!!!!!!!!!-------------------------------->
-        <xs:restriction base="xs:string">
-            <xs:pattern value="[A-Z]{1}[0-9]{8}"></xs:pattern>
-        </xs:restriction>
-    </xs:simpleType>
+
 
     <!-- Palabras max de 50-->
     <xs:simpleType name="longitud50">

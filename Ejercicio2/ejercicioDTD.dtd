@@ -15,7 +15,7 @@
 <!ELEMENT becario EMPTY>
 <!-- NO ENTIEDNO BIEN COMO HACER ESTOS TRES -->
 
-
+ 
 <!ELEMENT categoria (#PCDATA)>
 <!ELEMENT descripcion (#PCDATA | strong)*>
 <!ELEMENT b (#PCDATA)>

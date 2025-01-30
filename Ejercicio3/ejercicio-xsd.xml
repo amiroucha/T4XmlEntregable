@@ -8,19 +8,19 @@ xsi:noNamespaceSchemaLocation="ejercicio-xsd.xsd">
             <nombre>Pedro Ruiz</nombre>
             <sueldomes moneda="Dolar">1300</sueldomes>
             <categoria>Catedrático</categoria>
-             <descripcion>Una descripción del <b>empleado</b>, con las <b>tareas más importantes</b> que realiza en el departamento.</descripcion>
+            <descripcion>Una descripción del <b>empleado</b>, con las <b>tareas más importantes</b> que realiza en el departamento.</descripcion>
         </empleado>
         <empleado nif="R66602619" jefe="T75500720">
             <nombre>Mariano Pérez</nombre>
             <sueldoanio moneda="Euro">19000</sueldoanio>
             <categoria>Profesor</categoria>
-             <descripcion>Una descripción del <b>empleado</b>, con las <b>tareas más importantes</b> que realiza en el departamento.</descripcion>
+            <descripcion>Una descripción del <b>empleado</b>, con las <b>tareas más importantes</b> que realiza en el departamento.</descripcion>
         </empleado>
         <empleado nif="L32447246" jefe="T75500720">
             <nombre>Francisca Gil</nombre>
             <sueldoanio moneda="Euro">13000</sueldoanio>
             <categoria>Profesor</categoria>
-             <descripcion>Una descripción del <b>empleado</b>, con las <b>tareas más importantes</b> que realiza en el departamento.</descripcion>
+            <descripcion>Una descripción del <b>empleado</b>, con las <b>tareas más importantes</b> que realiza en el departamento.</descripcion>
         </empleado>
     </departamento>
     <departamento>
@@ -34,13 +34,13 @@ xsi:noNamespaceSchemaLocation="ejercicio-xsd.xsd">
             <nombre>Juana García</nombre>
             <sueldoanio>19000</sueldoanio>
             <categoria>Profesor</categoria>
-             <descripcion>Una descripción del <b>empleado</b>, con las <b>tareas más importantes</b> que realiza en el departamento.</descripcion>
+            <descripcion>Una descripción del <b>empleado</b>, con las <b>tareas más importantes</b> que realiza en el departamento.</descripcion>
         </empleado>
         <empleado nif="K55653788" jefe="E48209011 A61982243">
             <nombre>Adrián Llorente</nombre>
             <categoria>Becario</categoria>
             <becario/>
-             <descripcion>Una descripción del <b>empleado</b>, con las <b>tareas más importantes</b> que realiza en el departamento.</descripcion>
+            <descripcion>Una descripción del <b>empleado</b>, con las <b>tareas más importantes</b> que realiza en el departamento.</descripcion>
         </empleado>
     </departamento> 
 </universidad>
